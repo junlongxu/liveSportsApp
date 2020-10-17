@@ -85,8 +85,22 @@ class _LivePageState extends State<LivePage>
           // labelPadding: EdgeInsets.fromLTRB(20, 0, 10, 5),
           unselectedLabelColor: Colors.black,
           tabs: <Widget>[
-            ...tabList.map<Tab>(
-              (tab) => Tab(
+            ...tabList.map<Widget>(
+              (tab) =>
+                  //  Container(
+                  //   height: 30,
+                  //   width: 50,
+                  //   alignment: Alignment.center,
+                  //   decoration: BoxDecoration(
+                  //     gradient: LinearGradient(
+                  //         colors: [Color(0xfff54b64), Color(0xfff78361)],
+                  //         begin: Alignment.bottomLeft,
+                  //         end: Alignment.topRight),
+                  //     borderRadius: BorderRadius.circular(15),
+                  //   ),
+                  //   child: Text('data'),
+                  // )
+                  Tab(
                 child: Text(
                   tab,
                   style: TextStyle(fontSize: 16),
@@ -207,7 +221,7 @@ class _LivePageState extends State<LivePage>
   }
 
   Widget _imgItem(String imgUrl) {
-    return  PhysicalModel(
+    return PhysicalModel(
       color: Colors.transparent,
       borderRadius: BorderRadius.circular(6),
       clipBehavior: Clip.antiAlias,

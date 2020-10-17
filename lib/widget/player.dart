@@ -7,7 +7,7 @@ class PlayerWidget extends StatefulWidget {
 }
 
 class _PlayerWidgetState extends State<PlayerWidget> {
-  IjkMediaController controller = IjkMediaController();
+  IjkMediaController _controller = IjkMediaController();
   @override
   void initState() {
     super.initState();
@@ -19,7 +19,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
     // http://1011.hlsplay.aodianyun.com/demo/game.flv
     // mp4
     // https://media.w3.org/2010/05/sintel/trailer.mp4
-    await controller.setNetworkDataSource(
+    await _controller.setNetworkDataSource(
       'http://1011.hlsplay.aodianyun.com/demo/game.flv',
       autoPlay: true,
     );
@@ -28,7 +28,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
 
   @override
   void dispose() {
-    controller.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -36,7 +36,9 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   Widget build(BuildContext context) {
     return Container(
       height: 200, // 设置高度
-      child: IjkPlayer(mediaController: controller),
+      color: Colors.black,
+      alignment: Alignment.center,
+      child: _controller.isInit ? Text('加载中...', style: TextStyle(color: Colors.white),) : IjkPlayer(mediaController: _controller),
     );
   }
 }

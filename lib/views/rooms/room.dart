@@ -70,7 +70,7 @@ class _RoomState extends State<Room> with Base {
             timerCloseSVGA != null
                 ? Container(
                     child: SVGASimpleImage(
-                      resUrl: 'static/angel.svga',
+                      assetsName: 'images/angel.svga',
                     ),
                   )
                 : SizedBox()
